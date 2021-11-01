@@ -12,6 +12,10 @@
   <xacro:property name="caster_wheel_mass" value="0.001"/>
   <xacro:property name="caster_wheel_joint_offset" value="-0.052"/>
 
+  <xacro:property name="lidar360_link_height" value="0.075" />
+  <xacro:property name="lidar360_link_size" value="0.025" />
+  <xacro:property name="lidar360_dist" value="0.025" /> <!-- Distance above mount for lidar frame-->
+
   <!--Color Properties-->
   <material name="blue">
     <color rgba="0 0 0.8 1"/>
@@ -137,6 +141,39 @@
     <parent link="base_link"/>
     <child link="caster_wheel"/>
     <origin xyz="${caster_wheel_joint_offset} 0 -${caster_wheel_radius+0.005}" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Lidar360 Links-->
+  <link name="lidar360_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="${lidar360_link_size} ${lidar360_link_size} ${lidar360_link_height}"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="${lidar360_link_size} ${lidar360_link_size} ${lidar360_link_height}"/>
+      </geometry>
+    </collision>
+    <xacro:box_inertia m="2" w="${lidar360_link_size}" h="${lidar360_link_height}" d="${lidar360_link_size}"/>
+  </link>
+  <link name="laser" />
+
+  <!-- Lidar360 Joints-->
+  <joint name="lidar360_joint" type="fixed">
+    <axis xyz="0 1 0" />
+    <origin xyz="${-0.5*base_len + 0.5*lidar360_link_size} 0 ${0.5*lidar360_link_height + 0.005}" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="lidar360_link"/>
+  </joint>
+  <joint name="lidar360_top_joint" type="fixed">
+    <axis xyz="0 1 0" />
+    <origin xyz="0 0 ${0.5*lidar360_link_height + 0.5*lidar360_dist}" rpy="0 0 0"/>
+    <parent link="lidar360_link"/>
+    <child link="laser"/>
   </joint>
 
   <xacro:include filename="$(find ros_tutorial)/urdf/robot_tutorial_gazebo.xacro"/>

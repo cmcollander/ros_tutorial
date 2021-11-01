@@ -12,7 +12,9 @@
   <xacro:property name="caster_wheel_mass" value="0.001"/>
   <xacro:property name="caster_wheel_joint_offset" value="-0.052"/>
 
-  <!--Color Properties-->
+  <xacro:property name="camera_link_size" value="0.025" />
+
+  <!--Color Properties -->
   <material name="blue">
     <color rgba="0 0 0.8 1"/>
   </material>
@@ -26,7 +28,7 @@
     <color rgba="0.8 0.0 0.0 1.0"/>
   </material>
 
-  <!--Interial macros-->
+  <!--Interial macros -->
   <xacro:macro name="cylinder_inertia" params="m r h">
     <inertial>
       <mass value="${m}"/>
@@ -48,7 +50,7 @@
     </inertial>
   </xacro:macro>
 
-  <!--Base Footprint-->
+  <!--Base Footprint -->
   <link name="base_footprint">
     <xacro:box_inertia m="10" w="0.001" h="0.001" d="0.001"/>
     <visual>
@@ -59,7 +61,7 @@
     </visual>
   </link>
 
-  <!--Base link-->
+  <!--Base link -->
   <link name="base_link">
     <xacro:box_inertia m="10" w="${base_len}" h="${base_width}" d="0.01"/>
     <visual>
@@ -75,14 +77,14 @@
     </collision>
   </link>
 
-  <!--base_link to base_footprint Joint-->
+  <!--base_link to base_footprint Joint -->
   <joint name="base_link_joint" type="fixed">
     <origin xyz="0 0 ${wheel_radius + 0.005}" rpy="0 0 0" />
     <parent link="base_footprint"/>
     <child link="base_link" />
   </joint>
 
-  <!--Wheel link & joint macro-->
+  <!--Wheel link & joint macro -->
   <xacro:macro name="wheel" params="prefix reflect">
     <link name="${prefix}_wheel">
       <visual>
@@ -109,11 +111,11 @@
     </joint>
   </xacro:macro>
 
-  <!--Create Left & Right Wheel links/joints-->
+  <!--Create Left & Right Wheel links/joints -->
   <xacro:wheel prefix="left" reflect="1"/>
   <xacro:wheel prefix="right" reflect="-1"/>
 
-  <!--Caster Wheel Link-->
+  <!--Caster Wheel Link -->
   <link name="caster_wheel">
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -131,12 +133,38 @@
     <xacro:sphere_inertia m="10" r="${caster_wheel_radius}"/>
   </link>
 
-  <!--Caster Wheel Joint-->
+  <!--Caster Wheel Joint -->
   <joint name="caster_wheel_joint" type="continuous">
     <axis xyz="0 1 0" rpy="0 0 0" />
     <parent link="base_link"/>
     <child link="caster_wheel"/>
     <origin xyz="${caster_wheel_joint_offset} 0 -${caster_wheel_radius+0.005}" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Camera link -->
+  <link name="camera_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="${camera_link_size} ${camera_link_size} ${camera_link_size}"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="${camera_link_size} ${camera_link_size} ${camera_link_size}"/>
+      </geometry>
+    </collision>
+    <xacro:box_inertia m="1" w="${camera_link_size}" h="${camera_link_size}" d="${camera_link_size}"/>
+  </link>
+
+  <!-- Camera Joint -->
+  <joint name="camera_joint" type="fixed">
+    <axis xyz="0 1 0" />
+    <origin xyz="${0.5*base_len - 0.5*camera_link_size} 0 ${0.5*camera_link_size + 0.005}" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="camera_link"/>
   </joint>
 
   <xacro:include filename="$(find ros_tutorial)/urdf/robot_tutorial_gazebo.xacro"/>

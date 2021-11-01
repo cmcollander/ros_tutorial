@@ -1,0 +1,22 @@
+{
+  "Name": "BathtubAlcove_fde1f0b038f8_lod0",
+  "Source": "02_BathtubAlcove",
+  "Timestamp": 1592570899,
+  "BoundingBox": {
+    "MinPoint": {
+      "x": -0.904114842414856,
+      "y": -0.4774293899536133,
+      "z": 3.0279200018412666e-06
+    },
+    "MaxPoint": {
+      "x": 0.9089386463165283,
+      "y": 0.4740977883338928,
+      "z": 0.38485437631607056
+    }
+  },
+  "Type": "bathtubs",
+  "Category": "bathtubs",
+  "Width": 1.8130534887313843,
+  "Length": 0.9515271782875061,
+  "Orientation": 1.5707963267948966
+}

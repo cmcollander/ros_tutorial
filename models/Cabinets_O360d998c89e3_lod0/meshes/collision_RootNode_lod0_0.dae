@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 2.82.7 commit date:2020-03-12, commit time:05:06, hash:375c7dc4caf4</authoring_tool>
+    </contributor>
+    <created>2020-07-21T15:33:54</created>
+    <modified>2020-07-21T15:33:54</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_effects/>
+  <library_images/>
+  <library_geometries>
+    <geometry id="visual_RootNode_hull_1_015-mesh" name="visual_RootNode_hull_1.015">
+      <mesh>
+        <source id="visual_RootNode_hull_1_015-mesh-positions">
+          <float_array id="visual_RootNode_hull_1_015-mesh-positions-array" count="36">0.323854 -0.04006296 0.208394 -0.309542 -0.411467 -0.177978 -0.309188 -0.422064 0.159517 -0.293208 0.369743 0.170279 0.287585 0.382566 -0.171729 0.269596 -0.374192 -0.165193 -0.290073 0.37605 -0.171755 0.292211 0.377463 0.170002 0.291085 -0.414383 0.1591269 0.323899 -0.06458097 -0.205303 -0.313894 -0.07274198 -0.204888 0.286812 -0.078013 0.207242</float_array>
+          <technique_common>
+            <accessor source="#visual_RootNode_hull_1_015-mesh-positions-array" count="12" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="visual_RootNode_hull_1_015-mesh-normals">
+          <float_array id="visual_RootNode_hull_1_015-mesh-normals-array" count="60">0.002454638 -0.1415696 0.9899253 -0.01127868 0.9998227 0.01508295 -7.35588e-4 0.09150958 0.995804 -0.01317512 0.9997455 0.01831406 0.01276808 -0.9994255 -0.031394 0.06650239 -0.9896646 -0.1270495 0.9791892 -0.1830856 -0.08756834 0.03047078 -0.1336706 -0.9905573 -7.98967e-4 0.07480961 -0.9971976 0.9965688 0.08185511 -0.01226818 0.9971612 0.075172 -0.004346609 0.996115 -0.08790248 0.005317926 -0.9999179 -0.01279574 6.47022e-4 -0.9992987 0.01973491 0.03182327 -0.998529 0.05360275 -0.008163809 3.64636e-4 -0.07919079 -0.9968594 -0.001592099 0.07371062 -0.9972784 -0.0728811 -0.01208364 0.9972674 -0.04963755 0.01813626 0.9986027 0.1121284 -0.1393116 0.9838798</float_array>
+          <technique_common>
+            <accessor source="#visual_RootNode_hull_1_015-mesh-normals-array" count="20" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="visual_RootNode_hull_1_015-mesh-map-0">
+          <float_array id="visual_RootNode_hull_1_015-mesh-map-0-array" count="120">0 0.007378518 0.009545981 0.9485507 0.4275891 0.941851 1 0.943063 0.9919019 0.0373491 0.993658 0.9503162 0.9840635 0.03243368 0.4747536 0.9999294 0.993658 0.9503162 0.9919019 0.0373491 0.9840635 0.03243368 0.993658 0.9503162 0 0.007378518 0.01317 0.00682348 0.009545981 0.9485507 0.01317 0.00682348 0.05949562 0.914858 0.009545981 0.9485507 0.009545981 0.9485507 0.05949562 0.914858 0.4442825 1 0.05949562 0.914858 0.01317 0.00682348 0.4442825 1 0.9919019 0.0373491 1 0.943063 0.4442825 1 1 0.943063 0.993658 0.9503162 0.4442825 1 0.993658 0.9503162 0.4747536 0.9999294 0.4442825 1 0.4747536 0.9999294 0.009545981 0.9485507 0.4442825 1 0.01317 0.00682348 0 0.007378518 0.4341399 0 0 0.007378518 0.9840635 0.03243368 0.4341399 0 0.9840635 0.03243368 0.9919019 0.0373491 0.4341399 0 0.4442825 1 0.01317 0.00682348 0.4341399 0 0.9919019 0.0373491 0.4442825 1 0.4341399 0 0.9840635 0.03243368 0 0.007378518 0.4275891 0.941851 0.4747536 0.9999294 0.9840635 0.03243368 0.4275891 0.941851 0.009545981 0.9485507 0.4747536 0.9999294 0.4275891 0.941851</float_array>
+          <technique_common>
+            <accessor source="#visual_RootNode_hull_1_015-mesh-map-0-array" count="60" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="visual_RootNode_hull_1_015-mesh-vertices">
+          <input semantic="POSITION" source="#visual_RootNode_hull_1_015-mesh-positions"/>
+        </vertices>
+        <triangles count="20">
+          <input semantic="VERTEX" source="#visual_RootNode_hull_1_015-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#visual_RootNode_hull_1_015-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#visual_RootNode_hull_1_015-mesh-map-0" offset="2" set="0"/>
+          <p>2 0 0 8 0 1 11 0 2 4 1 3 6 1 4 7 1 5 3 2 6 0 2 7 7 2 8 6 3 9 3 3 10 7 3 11 2 4 12 1 4 13 8 4 14 1 5 15 5 5 16 8 5 17 8 6 18 5 6 19 9 6 20 5 7 21 1 7 22 9 7 23 6 8 24 4 8 25 9 8 26 4 9 27 7 9 28 9 9 29 7 10 30 0 10 31 9 10 32 0 11 33 8 11 34 9 11 35 1 12 36 2 12 37 10 12 38 2 13 39 3 13 40 10 13 41 3 14 42 6 14 43 10 14 44 9 15 45 1 15 46 10 15 47 6 16 48 9 16 49 10 16 50 3 17 51 2 17 52 11 17 53 0 18 54 3 18 55 11 18 56 8 19 57 0 19 58 11 19 59</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="collision_RootNode_lod0_0" name="collision_RootNode_lod0_0" type="NODE">
+        <matrix sid="transform">1 0 0 -2.95043e-5 0 -1.62921e-7 -0.9999999 -0.01466254 0 0.9999999 -1.62921e-7 0.3855779 0 0 0 1</matrix>
+        <instance_geometry url="#visual_RootNode_hull_1_015-mesh" name="collision_RootNode_lod0_0"/>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>

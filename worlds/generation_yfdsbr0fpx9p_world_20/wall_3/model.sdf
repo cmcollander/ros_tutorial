@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='us-ascii'?>
+<sdf version="1.6">
+  <model name="wall_3">
+    <static>true</static>
+    <link name="link">
+      <collision name="collision">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://generation_yfdsbr0fpx9p_world_20/wall_3/meshes/wall_3.dae</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <meta>
+          <layer>0</layer>
+        </meta>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://generation_yfdsbr0fpx9p_world_20/wall_3/meshes/wall_3.dae</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>

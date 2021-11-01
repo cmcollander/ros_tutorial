@@ -1,0 +1,22 @@
+{
+  "Name": "VanityCounterWithoutSink_aa0fa8736291_lod0",
+  "Source": "06_VanityCounterWithoutSink",
+  "Timestamp": 1592570893,
+  "BoundingBox": {
+    "MinPoint": {
+      "x": -0.676845908164978,
+      "y": -0.3016034960746765,
+      "z": 1.190370042536415e-07
+    },
+    "MaxPoint": {
+      "x": 0.6768456101417542,
+      "y": 0.2750000059604645,
+      "z": 0.9049268960952759
+    }
+  },
+  "Type": "vanity-counters",
+  "Category": "vanity-counters",
+  "Width": 1.3536915183067322,
+  "Length": 0.576603502035141,
+  "Orientation": 4.71238898038469
+}

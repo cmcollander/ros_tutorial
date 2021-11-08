@@ -7,7 +7,11 @@ project(ros_tutorial)
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
-find_package(catkin REQUIRED)
+find_package(catkin REQUIRED COMPONENTS
+    roscpp
+    std_msgs
+    message_generation
+)
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -43,11 +47,10 @@ find_package(catkin REQUIRED)
 ##   * add every package in MSG_DEP_SET to generate_messages(DEPENDENCIES ...)
 
 ## Generate messages in the 'msg' folder
-# add_message_files(
-#   FILES
-#   Message1.msg
-#   Message2.msg
-# )
+add_message_files(
+    FILES
+    Cylinder.msg
+)
 
 ## Generate services in the 'srv' folder
 # add_service_files(
@@ -64,10 +67,10 @@ find_package(catkin REQUIRED)
 # )
 
 ## Generate added messages and services with any dependencies listed here
-# generate_messages(
-#   DEPENDENCIES
-#   std_msgs  # Or other packages containing msgs
-# )
+generate_messages(
+    DEPENDENCIES
+    std_msgs  # Or other packages containing msgs
+)
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
@@ -101,7 +104,7 @@ find_package(catkin REQUIRED)
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES kbot_description
-#  CATKIN_DEPENDS other_catkin_pkg
+CATKIN_DEPENDS message_runtime
 #  DEPENDS system_lib
 )
 
@@ -200,3 +203,10 @@ include_directories(
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+
+catkin_install_python(
+    PROGRAMS 
+    scripts/radius_squarer.py
+    scripts/cylinder_calc.py
+    scripts/cylinder_input.py
+    DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
